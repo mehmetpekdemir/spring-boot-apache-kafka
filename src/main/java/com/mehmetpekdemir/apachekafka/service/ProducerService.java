@@ -1,4 +1,4 @@
-package com.mehmetpekdemir.apachekafka.producer;
+package com.mehmetpekdemir.apachekafka.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class Producer {
+public class ProducerService {
 
     private static final String TOPIC = "send_message";
     private final KafkaTemplate<String, String> kafkaTemplate;

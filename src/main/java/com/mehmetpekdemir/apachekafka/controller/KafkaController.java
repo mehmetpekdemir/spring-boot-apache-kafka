@@ -1,6 +1,6 @@
 package com.mehmetpekdemir.apachekafka.controller;
 
-import com.mehmetpekdemir.apachekafka.producer.Producer;
+import com.mehmetpekdemir.apachekafka.service.ProducerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class KafkaController {
 
-    private final Producer producer;
+    private final ProducerService producerService;
 
     @PostMapping
     public void sendMessage(@RequestParam("message") String message) {
-        producer.sendMessage(message);
+        producerService.sendMessage(message);
     }
 
 }
